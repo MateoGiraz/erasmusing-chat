@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "175649557274",
+    "project_id": "erasmusing-chat",
+    "storage_bucket": "erasmusing-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175649557274:android:6547abf4543b6f1084faa3",
+        "android_client_info": {
+          "package_name": "com.example.chat_erasmusing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175649557274-7ttm7vkg88vqmj2j68qi4n80pt6hvanf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZOl8iCgx5bNPaKp8ZEA3Do1s_rQKDHm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "175649557274-7ttm7vkg88vqmj2j68qi4n80pt6hvanf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
