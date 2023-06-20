@@ -65,7 +65,7 @@ class _SearchPageState extends State<SearchPage> {
                       style: const TextStyle(color: Colors.white),
                       decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: "Search Groups...",
+                          hintText: "Search...",
                           hintStyle:
                               TextStyle(color: Colors.white, fontSize: 16))),
                 ),
@@ -123,7 +123,9 @@ class _SearchPageState extends State<SearchPage> {
               searchSnapshot!.docs[index]["groupName"],
               searchSnapshot!.docs[index]["admin"])));
     } else {
-      return const Text("hello!");
+      return Padding(
+          padding: EdgeInsets.symmetric(vertical: 20),
+          child: const Text("Search to join chat groups!"));
     }
   }
 
@@ -132,9 +134,13 @@ class _SearchPageState extends State<SearchPage> {
       return ListView.builder(
           shrinkWrap: true,
           itemCount: usersSnapshot!.docs.length,
-          itemBuilder: ((context, index) => const Text("data")));
+          itemBuilder: ((context, index) => groupTile(
+              username,
+              usersSnapshot!.docs[index]["uid"],
+              usersSnapshot!.docs[index]["fullName"],
+              " _ ")));
     } else {
-      return const Text("hello!");
+      return const Text("");
     }
   }
 
@@ -157,7 +163,9 @@ class _SearchPageState extends State<SearchPage> {
             )),
         title: Text(groupName,
             style: const TextStyle(fontWeight: FontWeight.bold)),
-        subtitle: Text("Admin: ${admin.split("_")[1]}"),
+        subtitle: (admin == " _ "
+            ? Text(groupId, style: TextStyle(fontSize: 12))
+            : Text("Admin: ${admin.split("_")[1]}")),
         trailing: InkWell(
             onTap: () async {
               await DatabaseService(uid: user!.uid)
